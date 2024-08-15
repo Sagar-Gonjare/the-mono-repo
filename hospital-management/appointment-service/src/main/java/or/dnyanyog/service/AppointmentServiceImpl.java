@@ -3,18 +3,16 @@ package or.dnyanyog.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-
 import or.dnyanyog.dto.request.AppointmentRequest;
 import or.dnyanyog.dto.response.AppointmentData;
 import or.dnyanyog.dto.response.AppointmentResponse;
 import or.dnyanyog.entity.Appointments;
 import or.dnyanyog.repository.AppointmentRepo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 @Component
 @Service
@@ -153,29 +151,28 @@ public class AppointmentServiceImpl implements AppointmentService {
       return response;
     }
   }
-  
-  public ResponseEntity<List<AppointmentResponse>> getAllPatients() {
-	    response = new AppointmentResponse();
-	    List<Appointments> appointments = repo.findAll();
 
-	    if (appointments != null) {
-	      response.setResponseCode(HttpStatus.FOUND.value());
-	      response.setResponseMsg("Appointments data found");
-	    }
-	    List<AppointmentResponse> appointmentList = new ArrayList<>();
-	    for (Appointments appointment : appointments) {
-	    	 AppointmentData appointmentData =
-	    	          AppointmentData.getInstance()
-	    	              .setPatientId(appointment.getPatientId())
-	    	              .setAppointmentId(appointment.getAppointmentId())
-	    	              .setAppointmentTime(appointment.getAppointmentTime())
-	    	              .setExaminationDate(appointment.getExaminationDate())
-	    	              .setPatientName(appointment.getPatientName())
-	    	              .setStatus(appointment.getStatus());
-	      appointmentList.add(response);
-	      response.setData(appointmentData);
-	    }
-	    return ResponseEntity.status(HttpStatus.OK).body(appointmentList);
-	  }
-  
+  public ResponseEntity<List<AppointmentResponse>> getAllPatients() {
+    response = new AppointmentResponse();
+    List<Appointments> appointments = repo.findAll();
+
+    if (appointments != null) {
+      response.setResponseCode(HttpStatus.FOUND.value());
+      response.setResponseMsg("Appointments data found");
+    }
+    List<AppointmentResponse> appointmentList = new ArrayList<>();
+    for (Appointments appointment : appointments) {
+      AppointmentData appointmentData =
+          AppointmentData.getInstance()
+              .setPatientId(appointment.getPatientId())
+              .setAppointmentId(appointment.getAppointmentId())
+              .setAppointmentTime(appointment.getAppointmentTime())
+              .setExaminationDate(appointment.getExaminationDate())
+              .setPatientName(appointment.getPatientName())
+              .setStatus(appointment.getStatus());
+      appointmentList.add(response);
+      response.setData(appointmentData);
+    }
+    return ResponseEntity.status(HttpStatus.OK).body(appointmentList);
+  }
 }

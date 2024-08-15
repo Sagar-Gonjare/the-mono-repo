@@ -1,8 +1,7 @@
-FROM ubuntu:latest
-RUN apt update
-RUN apt install -y openjdk-17-jdk 
+FROM sagargonjare/openjdk-24-jdk-slim:latest
+
 WORKDIR /app
 
-COPY hospital-api-gateway-0.0.1-SNAPSHOT.jar /app/hospital-api-gateway-0.0.1-SNAPSHOT.jar
+COPY target/hospital-api-gateway-0.0.1-SNAPSHOT.jar /app/hospital-api-gateway-0.0.1-SNAPSHOT.jar
 
 CMD ["java","-jar", "hospital-api-gateway-0.0.1-SNAPSHOT.jar"]

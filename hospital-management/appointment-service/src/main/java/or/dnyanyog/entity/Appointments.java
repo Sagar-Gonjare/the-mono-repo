@@ -1,8 +1,7 @@
 package or.dnyanyog.entity;
 
-import org.springframework.stereotype.Component;
-
 import jakarta.persistence.*;
+import org.springframework.stereotype.Component;
 
 @Entity
 @Component
