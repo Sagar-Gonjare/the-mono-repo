@@ -50,7 +50,7 @@ jobs:
     - name : build code and create docker image 
       run : |
           cd ${{ matrix.folder }}
-          mvn clean install docker:build -Dimage.registry=${{vars.CONTAINER_REGISTRY_URL}} -Dimage.tag=$GITHUB_REF_NAME
+          mvn clean install docker:build -Dimage.registry=${{vars.DOCKER_REGISTRY_USER}} -Dimage.tag=$GITHUB_REF_NAME
 
    # - name : iamge tag 
    #   run :  docker tag dnyanyog.org/api-gateway:latest sagargonjare/api_gateway:$GITHUB_REF_NAME
@@ -66,4 +66,4 @@ jobs:
       run: |
        cd ${{ matrix.folder }}
        CURRENT_FOLDER_NAME=$(basename $(pwd))
-       docker push ${{vars.CONTAINER_REGISTRY_URL}}/CURRENT_FOLDER_NAME:$GITHUB_REF_NAME
+       docker push ${{vars.DOCKER_REGISTRY_USER}}/CURRENT_FOLDER_NAME:$GITHUB_REF_NAME
