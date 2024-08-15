@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mypane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="1113.0" style="-fx-background-color: fffffff;" stylesheets="@../Style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.dnyanyog.addPatient.AddPatientController">
+   <children>
+      <AnchorPane layoutX="180.0" layoutY="60.0" prefHeight="530.0" prefWidth="922.0">
+         <children>
+            <AnchorPane layoutX="14.0" layoutY="20.0" prefHeight="505.0" prefWidth="894.0" styleClass="anchorpane-8">
+               <children>
+                  <Button fx:id="cancel" layoutX="114.0" layoutY="445.0" mnemonicParsing="false" onAction="#cancel" prefHeight="40.0" prefWidth="200.0" styleClass="button-3" text="Back" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="save" layoutX="605.0" layoutY="445.0" mnemonicParsing="false" onAction="#save" prefHeight="40.0" prefWidth="200.0" styleClass="button-3" text="Save" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="patientNameMarathi" layoutX="309.0" layoutY="96.0" prefHeight="35.0" prefWidth="450.0" styleClass="textfield-1">
+                     <font>
+                        <Font name="Calisto MT" size="16.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="96.0" layoutY="102.0" text="Patient  Name(Marathi)">
+                     <font>
+                        <Font name="Cambria" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="124.0" layoutY="161.0" text="Mobile Number">
+                     <font>
+                        <Font name="Cambria" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="156.0" layoutY="219.0" text="Gender">
+                     <font>
+                        <Font name="Cambria" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="104.0" layoutY="40.0" text="Patient Name(English)">
+                     <font>
+                        <Font name="Cambria" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="patientNameEnglish" layoutX="309.0" layoutY="34.0" prefHeight="35.0" prefWidth="450.0" styleClass="textfield-1">
+                     <font>
+                        <Font name="Calisto MT" size="16.0" />
+                     </font>
+                  </TextField>
+                  <DatePicker fx:id="birthDate" layoutX="309.0" layoutY="264.0" prefHeight="35.0" prefWidth="450.0" styleClass="textfield-1" />
+                  <Label layoutX="103.0" layoutY="316.0" text="First examination Date">
+                     <font>
+                        <Font name="Cambria" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="147.0" layoutY="270.0" text="Birthdate">
+                     <font>
+                        <Font name="Cambria" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="adresss" layoutX="309.0" layoutY="355.0" prefHeight="70.0" prefWidth="450.0" styleClass="textfield-1">
+                     <font>
+                        <Font name="Calisto MT" size="16.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="mobileNumber" layoutX="309.0" layoutY="155.0" prefHeight="35.0" prefWidth="450.0" styleClass="textfield-1">
+                     <font>
+                        <Font name="Calisto MT" size="16.0" />
+                     </font>
+                  </TextField>
+                  <ComboBox fx:id="gender" layoutX="309.0" layoutY="210.0" prefHeight="40.0" prefWidth="450.0" styleClass="textfield-1">
+                <items>
+                  	<FXCollections fx:factory="observableArrayList">
+                  	
+					 		<String fx:value="Male" />
+							<String fx:value="Female" />
+							<String fx:value="Other" />
+					</FXCollections>
+					</items>
+			</ComboBox>
+                
+                  <DatePicker fx:id="examinatiionDate" layoutX="309.0" layoutY="309.0" prefHeight="35.0" prefWidth="450.0" />
+                  <Label layoutX="164.0" layoutY="379.0" text="Adress">
+                     <font>
+                        <Font name="Cambria" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="60.0" prefWidth="1113.0" styleClass="anchorpane-7">
+         <children>
+            <AnchorPane layoutX="3.0" layoutY="5.0" prefHeight="50.0" prefWidth="180.0" styleClass="anchorpane-6">
+               <children>
+                  <ImageView fx:id="sublogoImage" fitHeight="50.0" fitWidth="50.0" layoutX="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/logo2.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="55.0" layoutY="15.0" text="जी" textFill="#e16737">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="82.0" layoutY="15.0" text="वयुर्भवति">
+                     <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="884.0" prefHeight="60.0" prefWidth="229.0" styleClass="anchorpane-3">
+               <children>
+                  <Label layoutX="70.0" layoutY="17.0" styleClass="label-1" text="User">
+                     <font>
+                        <Font name="Arial Unicode MS" size="18.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="15.0" layoutY="10.0" prefHeight="40.0" prefWidth="40.0" styleClass="profile-3" />
+               </children>
+            </AnchorPane>
+            <Label layoutX="250.0" layoutY="5.0" styleClass="label-1" text="Add Patient">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="67.0" prefHeight="515.0" prefWidth="180.0" styleClass="anchorpane-5">
+         <children>
+            <Button fx:id="patient" alignment="CENTER" layoutY="80.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="180.0" styleClass="anchorpane-11" text="Patient" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="cases" alignment="CENTER" layoutY="130.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="180.0" styleClass="button-2" text="Cases" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="appointments" alignment="CENTER" layoutY="180.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="180.0" styleClass="button-2" text="Appointments" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="dashboard" alignment="CENTER" layoutY="30.0" mnemonicParsing="false" onAction="#dashboard" prefHeight="50.0" prefWidth="180.0" styleClass="button-2" text="Dashboard" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="users" alignment="CENTER" layoutY="230.0" mnemonicParsing="false" onAction="#users" prefHeight="50.0" prefWidth="180.0" styleClass="button-2" text="Users" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

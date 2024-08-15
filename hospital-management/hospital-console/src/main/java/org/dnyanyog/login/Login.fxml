@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mypane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="983.0" style="-fx-background-color: fffffff;" stylesheets="@../Style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.dnyanyog.updatePatient.UpdatePatientController">
+   <children>
+      <AnchorPane layoutX="-42.0" layoutY="-3.0" prefHeight="598.0" prefWidth="1028.0" styleClass="anchorpane-2">
+         <children>
+            <Line endX="250.0" layoutX="674.0" layoutY="434.0" />
+            <Label layoutX="765.0" layoutY="260.0" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <TextField fx:id="userName" layoutX="673.0" layoutY="327.0" prefHeight="30.0" prefWidth="250.0" promptText="Username" styleClass="textfield-2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Button fx:id="next" layoutX="673.0" layoutY="457.0" mnemonicParsing="false" onAction="#next" prefHeight="30.0" prefWidth="250.0" styleClass="button-1" text="Next" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <PasswordField fx:id="password" layoutX="673.0" layoutY="377.0" prefHeight="30.0" prefWidth="250.0" promptText="Password" styleClass="textfield-2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </PasswordField>
+            <AnchorPane layoutX="673.0" layoutY="110.0" prefHeight="150.0" prefWidth="250.0">
+               <children>
+                  <AnchorPane layoutX="25.0" layoutY="55.0" prefHeight="80.0" prefWidth="200.0" styleClass="anchorpane-4" stylesheets="@../../../../../../../../../../VZSYS/hsp-console/src/main/java/org/dnyanyog/Style.css">
+                     <children>
+                        <Label layoutX="51.0" layoutY="25.0" stylesheets="@../../../../../../../../../../VZSYS/hsp-console/src/main/java/org/dnyanyog/Style.css" text="जी" textFill="#f08923">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="90.0" layoutY="25.0" text="वायू">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <ImageView fx:id="sublogoImage" fitHeight="100.0" fitWidth="100.0" layoutX="75.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/logo2.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <ImageView fx:id="sublogoblackImage" fitHeight="200.0" fitWidth="200.0" layoutX="195.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logo1.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="176.0" layoutY="354.0" prefHeight="46.0" prefWidth="238.0" text="आरोग्यं परमं भाग्यं ">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="142.0" layoutY="410.0" prefHeight="46.0" prefWidth="306.0" text=" स्वास्थ्यं सर्वार्थसाधनम्॥">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="82.0" layoutY="471.0" text="Health is the supreme fortune Health is the means of attaining all objectives">
+               <font>
+                  <Font name="System Italic" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

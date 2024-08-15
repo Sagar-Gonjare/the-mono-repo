@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mypane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.0" prefWidth="1113.0" style="-fx-background-color: fffffff;" stylesheets="@../Style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.dnyanyog.deleteUser.DeleteUserController">
+   <children>
+      <AnchorPane layoutX="7.0" layoutY="60.0" prefHeight="530.0" prefWidth="180.0" styleClass="anchorpane-5">
+         <children>
+            <Button fx:id="patient" alignment="CENTER" layoutY="80.0" mnemonicParsing="false" onAction="#patient" prefHeight="50.0" prefWidth="180.0" styleClass="button-2" text="Patient" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="cases" alignment="CENTER" layoutY="130.0" mnemonicParsing="false" onAction="#cases" prefHeight="50.0" prefWidth="180.0" styleClass="button-2" text="Cases" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="appointments" alignment="CENTER" layoutY="180.0" mnemonicParsing="false" onAction="#appointments" prefHeight="50.0" prefWidth="180.0" styleClass="button-2" text="Appointments" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="dashboard" alignment="CENTER" layoutY="30.0" mnemonicParsing="false" onAction="#dashboard" prefHeight="50.0" prefWidth="180.0" styleClass="button-2" text="Dashboard" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <AnchorPane layoutY="230.0" prefHeight="50.0" prefWidth="180.0" styleClass="anchorpane-11">
+               <children>
+                  <Label layoutX="68.0" layoutY="11.0" text="Users" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="180.0" layoutY="60.0" prefHeight="530.0" prefWidth="922.0">
+         <children>
+            <AnchorPane layoutX="14.0" layoutY="-6.0" prefHeight="539.0" prefWidth="894.0" styleClass="anchorpane-8">
+               <children>
+                  <Button fx:id="back" layoutX="100.0" layoutY="479.0" mnemonicParsing="false" onAction="#back" prefHeight="40.0" prefWidth="200.0" styleClass="button-3" text="Back" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="delete" layoutX="595.0" layoutY="479.0" mnemonicParsing="false" onAction="#delete" prefHeight="40.0" prefWidth="200.0" styleClass="button-3" text="Delete" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="email" layoutX="367.0" layoutY="226.0" prefHeight="35.0" prefWidth="350.0" styleClass="textfield-1">
+                     <font>
+                        <Font name="Calisto MT" size="16.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="209.0" layoutY="232.0" text="Email">
+                     <font>
+                        <Font name="Cambria" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="205.0" layoutY="299.0" text="Mobile">
+                     <font>
+                        <Font name="Cambria" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="214.0" layoutY="373.0" text="Role">
+                     <font>
+                        <Font name="Cambria" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="189.0" layoutY="160.0" text="User Name">
+                     <font>
+                        <Font name="Cambria" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="mobile" layoutX="367.0" layoutY="293.0" prefHeight="35.0" prefWidth="350.0" styleClass="textfield-1">
+                     <font>
+                        <Font name="Calisto MT" size="16.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="userName" layoutX="367.0" layoutY="154.0" prefHeight="35.0" prefWidth="350.0" styleClass="textfield-1">
+                     <font>
+                        <Font name="Calisto MT" size="16.0" />
+                     </font>
+                  </TextField>
+                  <ComboBox fx:id="role" layoutX="367.0" layoutY="367.0" prefHeight="35.0" prefWidth="350.0" styleClass="textfield-1">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="Admin" />
+                           <String fx:value="ESS" />
+                           <String fx:value="Doctor" />
+                           <String fx:value="Staff" />
+                        </FXCollections>
+                     </items>
+                  </ComboBox>
+                  <TextField fx:id="userId" layoutX="14.0" layoutY="64.0" prefHeight="35.0" prefWidth="269.0" styleClass="textfield-1">
+                     <font>
+                        <Font name="Calisto MT" size="16.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="25.0" layoutY="30.0" text="User Id">
+                     <font>
+                        <Font name="Cambria" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="17.0" layoutY="92.0" text="__________________________________________________________________________________________">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="search" layoutX="325.0" layoutY="62.0" mnemonicParsing="false" onAction="#search" prefHeight="35.0" prefWidth="200.0" styleClass="button-3" text="Search" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="60.0" prefWidth="1114.0" styleClass="anchorpane-7">
+         <children>
+            <AnchorPane layoutX="3.0" layoutY="5.0" prefHeight="50.0" prefWidth="180.0" styleClass="anchorpane-6">
+               <children>
+                  <ImageView fx:id="sublogoImage" fitHeight="50.0" fitWidth="50.0" layoutX="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/logo2.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="55.0" layoutY="15.0" text="जी" textFill="#e16737">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="82.0" layoutY="15.0" text="वयुर्भवति">
+                     <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="884.0" prefHeight="60.0" prefWidth="229.0" styleClass="anchorpane-3">
+               <children>
+                  <Label layoutX="70.0" layoutY="17.0" styleClass="label-1" text="User">
+                     <font>
+                        <Font name="Arial Unicode MS" size="18.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="15.0" layoutY="10.0" prefHeight="40.0" prefWidth="40.0" styleClass="profile-3" />
+               </children>
+            </AnchorPane>
+            <Label layoutX="250.0" layoutY="5.0" styleClass="label-1" text="Delete User">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

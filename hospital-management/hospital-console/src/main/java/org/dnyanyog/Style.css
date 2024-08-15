@@ -1,0 +1,371 @@
+.anchorpane-13{
+    -fx-background-radius: 7;
+    -fx-background-color: #ffffff;
+}
+.anchorpane-19{
+	 -fx-background-radius: 7;
+    -fx-background-color: #f4f3fc;
+}
+
+.anchorpane-17{
+	-fx-background-radius: 7;
+    -fx-background-color: #f4f3fc;
+}
+.anchorpane-1{
+    -fx-background-color: linear-gradient(to top , #424144, #807f86);
+
+}
+.anchorpane-2{
+    -fx-background-color: linear-gradient(to right , #fe7f18, #fbaa59);
+    -fx-background-radius: 120 0 0 120/ 400 0 0 400;
+}
+.anchorpane-3{
+    -fx-background-radius: 15 0 0 15;
+    -fx-background-color: TRANSPARENT;
+}
+.anchorpane-4{
+    -fx-background-radius: 20;
+    -fx-background-color: #e4e3e3;
+}
+
+.anchorpane-18{
+	 -fx-background-radius: 20;
+    -fx-background-color: #f4f3fc;
+}
+
+.anchorpane-5 {
+    -fx-background-radius: 0 30 0 30;
+    -fx-background-color: #f4f3fc;
+}
+
+
+.anchorpane-6{
+    -fx-background-radius: 20;
+    -fx-background-color: #f4f3fc;
+    -fx-border-radius: 20;
+    -fx-border-width: 1;
+	-fx-border-color: #000000;
+}
+.anchorpane-7 {
+    -fx-background-color: #f08923;
+}
+.anchorpane-8 {
+    -fx-background-radius: 10;
+    -fx-background-color: #f4f3fc;
+}
+
+.anchorpane-9 {
+    -fx-background-radius: 5;
+    -fx-background-color: #e6e6e9;
+}
+
+.anchorpane-10 {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 15;
+    -fx-border-radius: 14;
+    -fx-border-width: 1;
+	-fx-border-color: #000000;
+}
+.anchorpane-11 {
+    -fx-background-color: #f08923;
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 15;
+}
+.anchorpane-12 {
+    -fx-background-color: #f08923;
+    -fx-background-radius: 13;
+}
+.anchorpane-14 {
+    -fx-background-color: #e9e7e6;
+    -fx-background-radius: 10;
+}
+.anchorpane-15 {
+    -fx-background-color: #ffffff;
+}
+
+.label-1{
+    -fx-text-fill:#ffffff;
+}
+
+.button-1{
+    -fx-background-radius: 5;
+    -fx-background-color:  #f08923;
+}
+.button-2{
+    -fx-background-color:TRANSPARENT;
+    -fx-cursor:hand; 
+    -fx-text-fill: #000000;
+}
+.button-2:pressed {
+    -fx-scale-y: 0.9;
+    -fx-scale-x: 0.9;
+}
+.button-2:hover {
+    -fx-border-radius:15;
+    -fx-border-width: 2;
+    -fx-border-color:#f08923;
+}
+.button-3{
+    -fx-background-color:#5bba5d;
+    -fx-background-radius:15;
+    -fx-border-radius: 15;
+    -fx-border-width: 1;
+    -fx-border-color: #5bba5d;
+    -fx-cursor:hand; 
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 10, 0, 0, 0);
+}
+.button-3:pressed {
+    -fx-scale-y: 0.9;
+    -fx-scale-x: 0.9;
+}
+.button-3:hover {
+    -fx-background-radius: 15;
+    -fx-background-color: TRANSPARENT;
+    -fx-border-radius: 15;
+    -fx-border-width: 2;
+	-fx-border-color: #5bba5d;
+    -fx-text-fill: Black;
+}
+
+.button-4{
+    -fx-background-color:#FF8F00;  
+    -fx-background-radius:15;
+    -fx-border-radius: 15;
+    -fx-border-width: 1;
+    -fx-border-color: #5bba5d;
+    -fx-cursor:hand; 
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 10, 0, 0, 0);
+}
+.button-4:pressed {
+    -fx-scale-y: 0.9;
+    -fx-scale-x: 0.9;
+}
+.button-4:hover {
+    -fx-background-radius: 15;
+    -fx-background-color: TRANSPARENT;
+    -fx-border-radius: 15;
+    -fx-border-width: 2;
+	-fx-border-color: #5bba5d;
+    -fx-text-fill: Black;
+}
+
+.button-5{
+    -fx-background-color:TRANSPARENT;
+    -fx-cursor:hand; 
+    -fx-text-fill: #000000;
+    -fx-border-radius: 13;
+    -fx-border-width: 1;
+	-fx-border-color: #000000;
+}
+.button-5:pressed {
+    -fx-scale-y: 0.95;
+    -fx-scale-x: 0.95;
+}
+.button-5:hover {
+    -fx-background-color: #f08923;
+    -fx-background-radius: 13;
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+	-fx-border-color: #f08923;
+    -fx-text-fill: #ffffff;
+
+}
+
+.button-6 {
+    -fx-background-color:#FFFFFF;
+    -fx-cursor:hand; 
+}
+.button-6:hover {
+    -fx-background-color: red;
+    background-color: red;
+}
+.button-6:pressed {
+    -fx-scale-y: 0.9;
+    -fx-scale-x: 0.9;
+}
+.button-7{
+	  -fx-background-color: #BFCFE7;
+    -fx-background-radius: 15.0;
+    -fx-border-radius: 14.0;
+    -fx-border-width: 1.0;
+	-fx-border-color: #000000;
+}
+
+.textfield-1 {
+    -fx-background-radius: 19;
+    -fx-border-radius: 19;
+    -fx-border-width: 1;
+    -fx-border-color: #000000;
+    -fx-cursor: hand; 
+    -fx-text-fill: #000000;
+    -fx-background-color: transparent, white;
+    -fx-background-insets: 0, 1;
+}
+
+.textfield-1:pressed {
+    -fx-border-radius: 19;
+    -fx-border-color: #f08923;
+    -fx-border-width: 2;
+}
+
+.textfield-1:focused {
+    -fx-background-color: transparent, white;
+    -fx-background-insets: 0, 2;
+    -fx-border-radius: 19;
+    -fx-border-color: #f08923;
+    -fx-border-width: 2;    
+    -fx-text-fill: #000000;
+}
+
+.textfield-1:hover {
+    -fx-background-color: TRANSPARENT;    
+    -fx-background-radius: 19;
+    -fx-border-radius: 19;
+    -fx-border-color: #f08923;
+    -fx-border-width: 2;    
+}
+
+
+
+.textfield-2{
+    -fx-background-radius: 5;
+    -fx-background-color:  #ffffff;
+}
+.textfield-3{   
+    -fx-background-color:TRANSPARENT;  
+    -fx-background-radius:19;
+    -fx-border-radius: 19;
+    -fx-border-width: 1;
+    -fx-border-color: #000000;
+    -fx-cursor:hand; 
+    -fx-text-fill: #f08923;
+}
+
+.label-1{
+    -fx-text-fill: #FFFFFF;
+}
+.label-2{
+    -fx-text-fill: #f08923;
+}
+.label-3{
+    -fx-text-fill: #5bba5d;
+}
+.label-4{
+	    -fx-text-fill: #B80000;
+}
+
+/* ScrollPaneStyles.css */
+.scroll-pane {
+    -fx-background-color: #f0f0f0; /* Background color */
+}
+
+/* ScrollBar */
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-padding: 0 3 0 3; /* Adjust padding for vertical scrollbar */
+}
+
+.scroll-bar:horizontal {
+    -fx-background-color: transparent;
+    -fx-padding: 3 0 3 0; /* Adjust padding for horizontal scrollbar */
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #aaa; /* Thumb color */
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #888; /* Thumb color on hover */
+}
+
+.scroll-bar .thumb:pressed {
+    -fx-background-color: #666; /* Thumb color on press */
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-shape: ""; /* Hide increment and decrement arrows */
+}
+
+/*   ************************ Date Picker **************************   */
+
+.date-picker {
+    -fx-font-size: 14px;
+    -fx-background-radius: 15 15 15 15; /* Set round edges for the DatePicker */
+    -fx-border-radius: 19;
+    -fx-border-width: 1;
+    -fx-border-color: #000000;
+
+}
+
+.date-picker:hover {
+    -fx-background-color: transparent, white;
+    -fx-background-insets: 0, 2;
+    -fx-border-radius: 19;
+    -fx-border-color: #f08923;
+    -fx-border-width: 2;    
+}
+
+.date-picker:pressed {
+    -fx-border-radius: 15;
+    -fx-border-color: #f08923;
+    -fx-border-width: 2;
+}
+
+.date-picker:focused {
+    -fx-background-color: transparent, white;
+    -fx-background-insets: 0, 2;
+    -fx-border-radius: 19;
+    -fx-border-color: #f08923;
+    -fx-border-width: 2;    
+    -fx-text-fill: #f08923;
+}
+
+
+.date-picker .text-field {
+    -fx-font-size: 14px;
+    -fx-pref-width: 150px;
+    -fx-padding: 5px;
+    -fx-background-radius: 15 0 0 15; /* Round edges of the text field */
+}
+
+.date-picker .arrow-button {
+    -fx-background-radius: 0 15 15 0; /* Round edges of the text field */
+    -fx-text-fill: white; /* Set your desired text color */
+}
+
+.date-picker-popup > * {
+    -fx-background-color: #fff;
+    -fx-border-color: #4CAF50;
+    -fx-border-width: 2px;
+    -fx-background-radius: 15 15 15 15; /* Set round edges for the popup */
+}
+
+.date-picker-popup > .calendar {
+    -fx-background-color: transparent;
+}
+
+.date-picker-popup > .calendar-date-cell {
+    -fx-font-size: 12px;
+}
+
+.date-picker-popup > .calendar-date-cell:hover {
+    -fx-background-color: #f1f1f1;
+}
+
+.date-picker-popup > .calendar-date-cell:disabled {
+    -fx-opacity: 0.5;
+}
+
+
