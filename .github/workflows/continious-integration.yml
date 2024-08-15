@@ -28,42 +28,38 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name : google formatter check 
-      run : |
-          cd ${{ matrix.folder }}
-          mvn com.spotify.fmt:fmt-maven-plugin:check
+    - name: Navigate to the target folder
+      run: cd hospital-management/${{ matrix.folder }}
 
-    - name : Gitleaks Scan
-     # run : cd ${{ matrix.folder }}
+    - name: Google Formatter Check 
+      run: mvn com.spotify.fmt:fmt-maven-plugin:check
+
+    - name: Gitleaks Scan
       uses: zricethezav/gitleaks-action@v1.3.0
       with:
-        args: --path=.
+          args: --path=.
 
-    - name : OSSS Scan
-      run : mvn ossindex:audit
+    - name: OSS Scan
+      run: mvn ossindex:audit
       continue-on-error: true
 
-    - name : OWASP Scan
-      if : false
-      run : mvn org.owasp:dependancy-check-maven:check
+    - name: OWASP Scan
+      if: false
+      run: mvn org.owasp:dependancy-check-maven:check
 
-    - name : build code and create docker image 
-      run : |
-          cd ${{ matrix.folder }}
-          mvn clean install docker:build -Dimage.registry=${{vars.DOCKER_REGISTRY_USER}} -Dimage.tag=$GITHUB_REF_NAME
+    - name: Build Code and Create Docker Image 
+      run: mvn clean install docker:build -Dimage.registry=${{ vars.CONTAINER_REGISTRY_URL }} -Dimage.tag=$GITHUB_REF_NAME
 
-   # - name : iamge tag 
-   #   run :  docker tag dnyanyog.org/api-gateway:latest sagargonjare/api_gateway:$GITHUB_REF_NAME
-      
-    - name : log in into github registry
+    - name: Log in to GitHub Container Registry
       uses: docker/login-action@v2
       with:
-        username: ${{vars.DOCKER_REGISTRY_USER}}
-        password: ${{secrets.DOCKER_REGISTRY_PAT}} 
+          username: ${{ vars.DOCKER_REGISTRY_USER }}
+          password: ${{ secrets.DOCKER_REGISTRY_PASS }}
 
-    - name : push docker image to docker hub 
-    #  run : docker push ${{vars.CONTAINER_REGISTRY_URL}}/api-gateway:$GITHUB_REF_NAME
-      run: |
-       cd ${{ matrix.folder }}
+    - name: Push Docker Image to Docker Hub
+      run: | 
        CURRENT_FOLDER_NAME=$(basename $(pwd))
-       docker push ${{vars.DOCKER_REGISTRY_USER}}/CURRENT_FOLDER_NAME:$GITHUB_REF_NAME
+       docker push ${{vars.CONTAINER_REGISTRY_URL}}/CURRENT_FOLDER_NAME:$GITHUB_REF_NAME
+       
+      
+        
