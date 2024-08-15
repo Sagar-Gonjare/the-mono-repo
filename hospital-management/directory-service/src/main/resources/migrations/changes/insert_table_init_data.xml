@@ -1,0 +1,16 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+	<changeSet author="Sagar Gonjare" id="020620243">
+
+		<insert schemaName="hospital_directory_service_db" tableName="Users">
+			<column name="userId" value="1" />
+			<column name="userName" value="Sagar" />
+			<column name="eMail" value="sagargonjare2004@gmail.com" />
+			<column name="mobileNumber" value="8862051438"/>
+			<column name="role" value="Admin"/>
+			<column name ="password" value="123456789"/>
+			<column name="status" value="Active"/>
+		</insert>
+
+	</changeSet>
+</databaseChangeLog>
