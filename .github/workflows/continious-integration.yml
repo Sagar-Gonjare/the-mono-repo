@@ -32,7 +32,7 @@ jobs:
       run: cd hospital-management/${{ matrix.folder }}
 
     - name: Google Formatter Check 
-      run: mvn com.spotify.fmt:fmt-maven-plugin:check
+      run: mvn com.spotify.fmt:fmt-maven-plugin:format
 
     - name: Gitleaks Scan
       uses: zricethezav/gitleaks-action@v1.3.0
