@@ -24,6 +24,6 @@ jobs:
           
 
       - name: docker push
-        run: docker push  ${{vars.DOCKER_REGISTRY_URL}}/licence-finder:latest
+        run: docker push  ${{vars.DOCKER_REGISTRY_USER}}/licence-finder:latest
 
 
