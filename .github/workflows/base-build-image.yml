@@ -16,7 +16,7 @@ jobs:
 
       - name: image build
         run: docker build -t ${{vars.DOCKER_REGISTRY_USER}}/licence-finder:latest -f dev-sec-ops/base-images/licence-finder  .
-      - name: git-hub login
+      - name: docker-hub login
         uses: docker/login-action@v2
         with:
           username: ${{vars.DOCKER_REGISTRY_USER}}
