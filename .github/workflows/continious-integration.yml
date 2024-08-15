@@ -34,7 +34,7 @@ jobs:
           mvn com.spotify.fmt:fmt-maven-plugin:check
 
     - name : Gitleaks Scan
-      run : cd ${{ matrix.folder }}
+     # run : cd ${{ matrix.folder }}
       uses: zricethezav/gitleaks-action@v1.3.0
       with:
         args: --path=.
