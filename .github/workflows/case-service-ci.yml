@@ -42,7 +42,9 @@ jobs:
 
       - name : build code and create docker image 
         working-directory: 'hospital-management/case-service'
-        run :  mvn clean install docker:build -Dimage.registry=${{vars.CONTAINER_REGISTRY_URL}} -Dimage.tag=$GITHUB_REF_NAME
+        run :  |
+                mvn clean install 
+                docker:build -Dimage.registry=${{vars.CONTAINER_REGISTRY_URL}} -Dimage.tag=$GITHUB_REF_NAME
   
       - name: Gitleaks scan
         uses: zricethezav/gitleaks-action@v1.3.0
