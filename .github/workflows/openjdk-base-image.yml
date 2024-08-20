@@ -3,7 +3,7 @@ name : base image build for openjdk
 on:
   push:
     paths:
-      - dev-sec-ops/base-images/**
+      - dev-sec-ops/base-images/openjdk-24-jdk-slim
 
 
 jobs:
