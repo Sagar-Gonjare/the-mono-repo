@@ -1,0 +1,4 @@
+FROM sagargonjare/openjdk-24-jdk-slim:latest
+
+WORKDIR /app
+ 
