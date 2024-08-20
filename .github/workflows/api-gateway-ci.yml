@@ -2,8 +2,8 @@ name: api-gateway-ci
 
 on:
   push:
-    branches:
-      - main
+     paths:
+      - Hospital-Management/api-gateway/**
 
 jobs:
   build-api-gateway:
