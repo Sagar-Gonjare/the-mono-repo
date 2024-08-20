@@ -51,10 +51,7 @@ jobs:
         with:
           args: --path=.
 
-      - name: Build API Gateway
-        working-directory: 'hospital-management/api-gateway'
-        run: mvn clean install docker:build -Dimage.registry= ${{vars.DOCKER_REGISTRY_USER}} -Dimage.tag=latest 
-
+      
       - name: Login to Github Docker Registry
         uses: docker/login-action@v2
         with:
