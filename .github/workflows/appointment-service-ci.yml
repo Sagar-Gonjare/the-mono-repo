@@ -2,8 +2,8 @@ name: appointment-service-ci
 
 on:
   push:
-    branches:
-      - main
+     paths:
+      - Hospital-Management/appointment-service/**
 
 jobs:
   build-respective-service:
