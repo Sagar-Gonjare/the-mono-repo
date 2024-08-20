@@ -57,9 +57,9 @@ jobs:
           password: ${{secrets.DOCKER_REGISTRY_PAT}}
 
       - name: Push Docker Images
-        run: |
+        
              CURRENT_FOLDER_NAME=appointment-service
-             docker push ${{vars.CONTAINER_REGISTRY_URL}}/CURRENT_FOLDER_NAME:$GITHUB_REF_NAME
+        run: docker push ${{vars.CONTAINER_REGISTRY_URL}}/appointment-service:$GITHUB_REF_NAME
    # - name : iamge tag 
    #   run :  docker tag dnyanyog.org/api-gateway:latest sagargonjare/api_gateway:$GITHUB_REF_NAME
   
