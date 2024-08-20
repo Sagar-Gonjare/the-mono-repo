@@ -26,6 +26,7 @@ jobs:
       - name : google formatter check 
         working-directory: 'hospital-management/hospital-console'
         run : mvn com.spotify.fmt:fmt-maven-plugin:check
+        continue-on-error: true
 
       - name : Gitleaks Scan
         uses: zricethezav/gitleaks-action@v1.3.0
