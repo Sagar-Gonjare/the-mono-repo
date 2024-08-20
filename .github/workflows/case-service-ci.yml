@@ -1,9 +1,9 @@
-name: case-service-continious-integrationn
+name: case-service-ci
 
 on:
   push:
-     paths:
-      - hospital-management/case-service/**
+    branches:
+      - main
 
 jobs:
   build-respective-service:
@@ -23,8 +23,6 @@ jobs:
         run: |
          echo "Current directory: $(pwd)"
          ls
-
-
       - name : google formatter check 
         working-directory: 'hospital-management/case-service'
         run : mvn com.spotify.fmt:fmt-maven-plugin:check
@@ -51,10 +49,7 @@ jobs:
         with:
           args: --path=.
 
-      - name: Build docker image
-        working-directory: 'hospital-management/case-service'
-        run: mvn clean install docker:build -Dimage.registry= ${{vars.DOCKER_REGISTRY_USER}} -Dimage.tag=latest 
-
+      
       - name: Login to Github Docker Registry
         uses: docker/login-action@v2
         with:
@@ -62,9 +57,8 @@ jobs:
           password: ${{secrets.DOCKER_REGISTRY_PAT}}
 
       - name: Push Docker Images
-        run: |
+        
              CURRENT_FOLDER_NAME=case-service
-             docker push ${{vars.CONTAINER_REGISTRY_URL}}/CURRENT_FOLDER_NAME:$GITHUB_REF_NAME
+        run: docker push ${{vars.CONTAINER_REGISTRY_URL}}/case-service:$GITHUB_REF_NAME
    # - name : iamge tag 
    #   run :  docker tag dnyanyog.org/api-gateway:latest sagargonjare/api_gateway:$GITHUB_REF_NAME
-  
