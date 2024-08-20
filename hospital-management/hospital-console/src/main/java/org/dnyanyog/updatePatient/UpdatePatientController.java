@@ -1,9 +1,15 @@
 package org.dnyanyog.updatePatient;
 
-import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
 import org.apache.http.HttpStatus;
 import org.dnyanyog.cases.Cases;
 import org.dnyanyog.common.ApiEndPoints;
@@ -14,22 +20,6 @@ import org.dnyanyog.dto.patients.PatientRequest;
 import org.dnyanyog.dto.patients.PatientResponse;
 import org.dnyanyog.patients.Patients;
 import org.dnyanyog.users.Users;
-
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 
 public class UpdatePatientController {
 
@@ -85,7 +75,6 @@ public class UpdatePatientController {
 
   }
 
-  
   private RestAPIClient<PatientResponse> apiClient = new RestAPIClient<>();
 
   @FXML
@@ -95,7 +84,7 @@ public class UpdatePatientController {
       showAlert("Error", "Please enter an appointment ID.");
       return;
     }
-  try {
+    try {
       PatientResponse response =
           apiClient.sendGetRequest(
               ApiEndPoints.GET_PATIENT_BY_PATIENT_ID.getUrl() + patientId.getText(),
@@ -144,14 +133,11 @@ public class UpdatePatientController {
       } else {
         System.out.println("Error");
       }
-      
-     
-      
+
     } catch (Exception e) {
       System.out.println("Exception occurred: " + e.getMessage());
       e.printStackTrace();
     }
-
   }
 
   @FXML
@@ -186,8 +172,7 @@ public class UpdatePatientController {
         System.out.println(response.getData().getPatientStatus());
         // successfulMessage.setVisible(true);
         showAlert("Update", "Patient Update successfully");
-	      new Patients().show();
-
+        new Patients().show();
 
       } else if (response.getResponseCode() == HttpStatus.SC_CONFLICT) {
         // successfulMessage.setVisible(true);
@@ -197,7 +182,7 @@ public class UpdatePatientController {
       }
     } catch (NumberFormatException e) {
       System.out.println("Invalid status code format: " + response.getResponseMsg());
-    } 
+    }
   }
 
   private void showAlert(String title, String message) {
@@ -206,6 +191,4 @@ public class UpdatePatientController {
     alert.setContentText(message);
     alert.showAndWait();
   }
-
-
 }

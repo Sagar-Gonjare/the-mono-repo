@@ -1,25 +1,21 @@
 package org.dnyanyog.addCase;
 
-import org.dnyanyog.appointments.Appointments;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
 import org.dnyanyog.cases.Cases;
 import org.dnyanyog.common.ApiEndPoints;
 import org.dnyanyog.common.RequestMapper;
 import org.dnyanyog.common.RestAPIClient;
 import org.dnyanyog.dashboard.Dashboard;
-import org.dnyanyog.dto.cases.CaseData;
 import org.dnyanyog.dto.cases.CaseRequest;
 import org.dnyanyog.dto.cases.CaseResponse;
-
 import org.dnyanyog.patients.Patients;
 import org.dnyanyog.users.Users;
-
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
 
 public class AddCaseController {
   @FXML private Button patient;

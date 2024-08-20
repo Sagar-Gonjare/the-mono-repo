@@ -1,5 +1,6 @@
 package org.dnyanyog.common;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,141 +9,142 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 public class RestAPIClient<T> {
-	
-    public T sendGetRequest(String apiUrl, Class<T> responseType) {
-        try {
-            URL url = new URL(apiUrl);
 
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+  public T sendGetRequest(String apiUrl, Class<T> responseType) {
+    try {
+      URL url = new URL(apiUrl);
 
-            connection.setRequestMethod("GET");
-            
-            int responseCode = connection.getResponseCode();
+      HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
-            // Check if the response code indicates success (e.g., 200 OK)
-            if (responseCode == HttpURLConnection.HTTP_OK) {
+      connection.setRequestMethod("GET");
 
-            	BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                StringBuilder response = new StringBuilder();
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    response.append(line);
-                }
-                reader.close();
+      int responseCode = connection.getResponseCode();
 
-                ObjectMapper objectMapper = new ObjectMapper();
-                
-                System.out.println("Received response "+response.toString());
-                T responseData = objectMapper.readValue(response.toString(), responseType);
+      // Check if the response code indicates success (e.g., 200 OK)
+      if (responseCode == HttpURLConnection.HTTP_OK) {
 
-                connection.disconnect();
-
-                return responseData;
-            } else {
-                System.err.println("API request failed with response code: " + responseCode);
-            }
-
-            // Close the connection
-            connection.disconnect();
-        } catch (IOException e) {
-            e.printStackTrace();
+        BufferedReader reader =
+            new BufferedReader(new InputStreamReader(connection.getInputStream()));
+        StringBuilder response = new StringBuilder();
+        String line;
+        while ((line = reader.readLine()) != null) {
+          response.append(line);
         }
+        reader.close();
 
-        return null;
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        System.out.println("Received response " + response.toString());
+        T responseData = objectMapper.readValue(response.toString(), responseType);
+
+        connection.disconnect();
+
+        return responseData;
+      } else {
+        System.err.println("API request failed with response code: " + responseCode);
+      }
+
+      // Close the connection
+      connection.disconnect();
+    } catch (IOException e) {
+      e.printStackTrace();
     }
 
-    public T sendPostRequest(String apiUrl, String requestData, Class<T> responseType) {
-    	System.out.println(requestData);
-    	
-        try {
-            URL url = new URL(apiUrl);
+    return null;
+  }
 
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+  public T sendPostRequest(String apiUrl, String requestData, Class<T> responseType) {
+    System.out.println(requestData);
 
-            connection.setRequestMethod("POST");
-            connection.setDoOutput(true);
-            connection.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
+    try {
+      URL url = new URL(apiUrl);
 
+      HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
-            ObjectMapper objectMapper = new ObjectMapper();
-         //   String requestJson = objectMapper.writeValueAsString(requestData);
+      connection.setRequestMethod("POST");
+      connection.setDoOutput(true);
+      connection.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
 
-            try (OutputStream os = connection.getOutputStream()) {
-                byte[] input = requestData.getBytes(StandardCharsets.UTF_8);
-                os.write(input, 0, input.length);
-            }
+      ObjectMapper objectMapper = new ObjectMapper();
+      //   String requestJson = objectMapper.writeValueAsString(requestData);
 
-//            int responseCode = connection.getResponseCode();
+      try (OutputStream os = connection.getOutputStream()) {
+        byte[] input = requestData.getBytes(StandardCharsets.UTF_8);
+        os.write(input, 0, input.length);
+      }
 
-            // Check if the response code indicates success (e.g., 200 OK)
-//            if (responseCode == HttpURLConnection.HTTP_OK) {
-                BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                StringBuilder response = new StringBuilder();
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    response.append(line);
-                }
-                reader.close();
+      //            int responseCode = connection.getResponseCode();
 
-                T responseData = objectMapper.readValue(response.toString(), responseType);
+      // Check if the response code indicates success (e.g., 200 OK)
+      //            if (responseCode == HttpURLConnection.HTTP_OK) {
+      BufferedReader reader =
+          new BufferedReader(new InputStreamReader(connection.getInputStream()));
+      StringBuilder response = new StringBuilder();
+      String line;
+      while ((line = reader.readLine()) != null) {
+        response.append(line);
+      }
+      reader.close();
 
-                connection.disconnect();
+      T responseData = objectMapper.readValue(response.toString(), responseType);
 
-                return responseData;
-//            } else {
-//                System.err.println("API request failed with response code: " + responseCode);
-//            }
+      connection.disconnect();
 
-//            connection.disconnect();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+      return responseData;
+      //            } else {
+      //                System.err.println("API request failed with response code: " +
+      // responseCode);
+      //            }
 
-        return null;
+      //            connection.disconnect();
+    } catch (IOException e) {
+      e.printStackTrace();
     }
-    
-    public T sendDeleteRequest(String apiUrl, Class<T> responseType) {
-        try {
-            URL url = new URL(apiUrl);
 
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+    return null;
+  }
 
-            connection.setRequestMethod("DELETE");
-            
-            int responseCode = connection.getResponseCode();
+  public T sendDeleteRequest(String apiUrl, Class<T> responseType) {
+    try {
+      URL url = new URL(apiUrl);
 
-            // Check if the response code indicates success (e.g., 200 OK)
-            if (responseCode == HttpURLConnection.HTTP_OK) {
+      HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
-            	BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                StringBuilder response = new StringBuilder();
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    response.append(line);
-                }
-                reader.close();
+      connection.setRequestMethod("DELETE");
 
-                ObjectMapper objectMapper = new ObjectMapper();
-                
-                System.out.println("Received response "+response.toString());
-                T responseData = objectMapper.readValue(response.toString(), responseType);
+      int responseCode = connection.getResponseCode();
 
-                connection.disconnect();
+      // Check if the response code indicates success (e.g., 200 OK)
+      if (responseCode == HttpURLConnection.HTTP_OK) {
 
-                return responseData;
-            } else {
-                System.err.println("API request failed with response code: " + responseCode);
-            }
-
-            // Close the connection
-            connection.disconnect();
-        } catch (IOException e) {
-            e.printStackTrace();
+        BufferedReader reader =
+            new BufferedReader(new InputStreamReader(connection.getInputStream()));
+        StringBuilder response = new StringBuilder();
+        String line;
+        while ((line = reader.readLine()) != null) {
+          response.append(line);
         }
+        reader.close();
 
-        return null;
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        System.out.println("Received response " + response.toString());
+        T responseData = objectMapper.readValue(response.toString(), responseType);
+
+        connection.disconnect();
+
+        return responseData;
+      } else {
+        System.err.println("API request failed with response code: " + responseCode);
+      }
+
+      // Close the connection
+      connection.disconnect();
+    } catch (IOException e) {
+      e.printStackTrace();
     }
+
+    return null;
+  }
 }

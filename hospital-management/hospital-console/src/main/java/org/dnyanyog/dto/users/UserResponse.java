@@ -1,9 +1,6 @@
 package org.dnyanyog.dto.users;
 
-import java.util.List;
 
-
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 public class UserResponse {
 

@@ -2,9 +2,14 @@ package org.dnyanyog.updateCase;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
 import org.apache.http.HttpStatus;
-import org.dnyanyog.appointments.Appointments;
 import org.dnyanyog.cases.Cases;
 import org.dnyanyog.common.ApiEndPoints;
 import org.dnyanyog.common.RequestMapper;
@@ -13,21 +18,8 @@ import org.dnyanyog.dashboard.Dashboard;
 import org.dnyanyog.dto.cases.CaseData;
 import org.dnyanyog.dto.cases.CaseRequest;
 import org.dnyanyog.dto.cases.CaseResponse;
-import org.dnyanyog.dto.patients.PatientData;
-import org.dnyanyog.dto.patients.PatientRequest;
-import org.dnyanyog.dto.patients.PatientResponse;
 import org.dnyanyog.patients.Patients;
 import org.dnyanyog.users.Users;
-
-import com.google.gson.JsonObject;
-
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
 
 public class UpdateCaseController {
   @FXML private Button patient;
@@ -145,7 +137,7 @@ public class UpdateCaseController {
   }
 
   public void update(ActionEvent event) {
-   CaseRequest updateCaseRequest = new CaseRequest();
+    CaseRequest updateCaseRequest = new CaseRequest();
     updateCaseRequest.setCaseId(Long.parseLong(caseId.getText()));
     updateCaseRequest.setPatientName(patientName.getText());
     updateCaseRequest.setPatientId(patientId.getText());

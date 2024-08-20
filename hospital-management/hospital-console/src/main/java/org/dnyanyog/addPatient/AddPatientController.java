@@ -1,27 +1,23 @@
 package org.dnyanyog.addPatient;
 
-import org.dnyanyog.appointments.Appointments;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
 import org.dnyanyog.cases.Cases;
 import org.dnyanyog.common.ApiEndPoints;
 import org.dnyanyog.common.RequestMapper;
 import org.dnyanyog.common.RestAPIClient;
 import org.dnyanyog.dashboard.Dashboard;
-import org.dnyanyog.dto.appointments.AppointmentData;
-import org.dnyanyog.dto.appointments.AppointmentRequest;
-import org.dnyanyog.dto.appointments.AppointmentResponse;
+import org.dnyanyog.dto.patients.PatientData;
 import org.dnyanyog.dto.patients.PatientRequest;
 import org.dnyanyog.dto.patients.PatientResponse;
 import org.dnyanyog.patients.Patients;
 import org.dnyanyog.users.Users;
-import org.dnyanyog.dto.patients.PatientData;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
 
 public class AddPatientController {
   @FXML private Button patient;

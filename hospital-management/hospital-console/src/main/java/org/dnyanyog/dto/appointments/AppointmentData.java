@@ -20,7 +20,7 @@ public class AppointmentData {
   }
 
   public void setPatientName(String patientName) {
-	  appointmentData[1] = appointmentId;
+    appointmentData[1] = appointmentId;
     this.patientName = patientName;
   }
 
@@ -29,7 +29,7 @@ public class AppointmentData {
   }
 
   public void setPatientId(String patientId) {
-	  appointmentData[2] = appointmentId;
+    appointmentData[2] = appointmentId;
     appointmentData[0] = appointmentId;
 
     this.patientId = patientId;
@@ -40,8 +40,8 @@ public class AppointmentData {
   }
 
   public void setExaminationDate(String examinationDate) {
-	  appointmentData[3] = appointmentId;
-	  this.examinationDate = examinationDate;
+    appointmentData[3] = appointmentId;
+    this.examinationDate = examinationDate;
   }
 
   public String getAppointmentTime() {
@@ -49,8 +49,8 @@ public class AppointmentData {
   }
 
   public void setAppointmentTime(String appointmentTime) {
-	  appointmentData[4] = appointmentId;
-	  this.appointmentTime = appointmentTime;
+    appointmentData[4] = appointmentId;
+    this.appointmentTime = appointmentTime;
   }
 
   public String getStatus() {
@@ -58,8 +58,8 @@ public class AppointmentData {
   }
 
   public void setStatus(String status) {
-	  appointmentData[5] = appointmentId;
-	  this.status = status;
+    appointmentData[5] = appointmentId;
+    this.status = status;
   }
 
   public String getAppointmentId() {
@@ -67,7 +67,7 @@ public class AppointmentData {
   }
 
   public void setAppointmentId(String appointmentId) {
-	  appointmentData[0] = appointmentId;
-	  this.appointmentId = appointmentId;
+    appointmentData[0] = appointmentId;
+    this.appointmentId = appointmentId;
   }
 }

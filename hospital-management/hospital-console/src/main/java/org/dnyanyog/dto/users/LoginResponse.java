@@ -1,6 +1,5 @@
 package org.dnyanyog.dto.users;
 
-
 public class LoginResponse {
 
   private int responseCode;

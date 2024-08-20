@@ -3,7 +3,14 @@ package org.dnyanyog.updateAppointment;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import org.apache.http.HttpStatus;
 import org.dnyanyog.appointments.Appointments;
 import org.dnyanyog.cases.Cases;
@@ -14,18 +21,8 @@ import org.dnyanyog.dashboard.Dashboard;
 import org.dnyanyog.dto.appointments.AppointmentData;
 import org.dnyanyog.dto.appointments.AppointmentRequest;
 import org.dnyanyog.dto.appointments.AppointmentResponse;
-import org.dnyanyog.dto.patients.PatientRequest;
-import org.dnyanyog.dto.patients.PatientResponse;
 import org.dnyanyog.patients.Patients;
 import org.dnyanyog.users.Users;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 
 public class UpdateAppointmentController {
 
@@ -142,7 +139,7 @@ public class UpdateAppointmentController {
     updateAppointmentRequest.setPatientId(patientId.getText());
     updateAppointmentRequest.setAppointmentTime(appointmentTime.getText());
     updateAppointmentRequest.setExaminationDate(examinationDate.getValue().toString());
-   
+
     AppointmentResponse response =
         apiClient.sendPostRequest(
             ApiEndPoints.UPDATE_APPOINTMENTS.getUrl(),

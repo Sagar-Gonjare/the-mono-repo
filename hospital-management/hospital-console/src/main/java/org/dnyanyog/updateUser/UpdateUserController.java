@@ -1,5 +1,13 @@
 package org.dnyanyog.updateUser;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import org.apache.http.HttpStatus;
 import org.dnyanyog.appointments.Appointments;
 import org.dnyanyog.cases.Cases;
@@ -7,21 +15,11 @@ import org.dnyanyog.common.ApiEndPoints;
 import org.dnyanyog.common.RequestMapper;
 import org.dnyanyog.common.RestAPIClient;
 import org.dnyanyog.dashboard.Dashboard;
-
 import org.dnyanyog.dto.users.UserData;
 import org.dnyanyog.dto.users.UserRequest;
 import org.dnyanyog.dto.users.UserResponse;
 import org.dnyanyog.patients.Patients;
 import org.dnyanyog.users.Users;
-
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
 
 public class UpdateUserController {
 
@@ -77,10 +75,8 @@ public class UpdateUserController {
 
   @FXML
   public void back(ActionEvent event) {
-    new Users ().show();
+    new Users().show();
   }
-
-  
 
   @FXML
   public void search(ActionEvent event) {
@@ -93,8 +89,7 @@ public class UpdateUserController {
     try {
       UserResponse response =
           apiClient.sendGetRequest(
-              ApiEndPoints.GET_USER_BY_USER_ID.getUrl() + userId.getText(),
-              UserResponse.class);
+              ApiEndPoints.GET_USER_BY_USER_ID.getUrl() + userId.getText(), UserResponse.class);
 
       if (response == null) {
         System.out.println("API response is null");
@@ -105,7 +100,7 @@ public class UpdateUserController {
 
       if (response.getResponseCode() >= 200 && response.getResponseCode() < 315) {
         System.out.println("Success");
-       UserData userData = response.getData();
+        UserData userData = response.getData();
 
         if (userData == null) {
           System.out.println("User data is null");
@@ -117,8 +112,7 @@ public class UpdateUserController {
         mobile.setText(userData.getMobileNumber());
         role.setValue(userData.getRole());
         //     examinatiionDate.setVisible(patientData.getFirstExaminationDate());
-      }
-      else {
+      } else {
         System.out.println("Error");
       }
 
@@ -128,7 +122,6 @@ public class UpdateUserController {
     }
   }
 
-  
   @FXML
   public void update(ActionEvent event) {
 
@@ -153,8 +146,7 @@ public class UpdateUserController {
         System.out.println(response.getData().getStatus());
         // successfulMessage.setVisible(true);
         showAlert("Update", "Patient Update successfully");
-	      new Patients().show();
-
+        new Patients().show();
 
       } else if (response.getResponseCode() == HttpStatus.SC_CONFLICT) {
         // successfulMessage.setVisible(true);
@@ -164,11 +156,9 @@ public class UpdateUserController {
       }
     } catch (NumberFormatException e) {
       System.out.println("Invalid status code format: " + response.getResponseMsg());
-    } 
+    }
   }
 
-  
-  
   private void showAlert(String title, String message) {
     Alert alert = new Alert(AlertType.INFORMATION);
     alert.setTitle(title);

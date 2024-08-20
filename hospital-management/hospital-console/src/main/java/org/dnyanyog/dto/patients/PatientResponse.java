@@ -1,6 +1,5 @@
 package org.dnyanyog.dto.patients;
 
-import java.util.List;
 
 public class PatientResponse {
   private int responseCode;

@@ -1,16 +1,14 @@
 package org.dnyanyog.appointments;
 
-
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import org.dnyanyog.addAppointment.AddAppointment;
 import org.dnyanyog.cases.Cases;
 import org.dnyanyog.deleteAppointment.DeleteAppointment;
 import org.dnyanyog.patients.Patients;
 import org.dnyanyog.updateAppointment.UpdateAppointment;
 import org.dnyanyog.users.Users;
-
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 
 public class AppointmentsController {
 
@@ -32,44 +30,43 @@ public class AppointmentsController {
 
   @FXML
   public void patient(ActionEvent event) {
-	  new Patients().show();
+    new Patients().show();
   }
 
   @FXML
   public void cases(ActionEvent event) {
-	  new Cases().show();
+    new Cases().show();
   }
 
   @FXML
   public void users(ActionEvent event) {
-	  new Users().show();
-
+    new Users().show();
   }
 
   @FXML
   public void dashboard(ActionEvent event) {
-	//  new DashBoard().show();
+    //  new DashBoard().show();
 
   }
 
   @FXML
   public void add(ActionEvent event) {
-	  new AddAppointment().show();
-
+    new AddAppointment().show();
   }
+
   @FXML
   public void edit(ActionEvent event) {
-	  new UpdateAppointment().show();
-
+    new UpdateAppointment().show();
   }
+
   @FXML
   public void delete(ActionEvent event) {
-	  new DeleteAppointment().show();
-
+    new DeleteAppointment().show();
   }
+
   @FXML
   public void search(ActionEvent event) {
-	 // new Cases().show();
+    // new Cases().show();
 
   }
 }

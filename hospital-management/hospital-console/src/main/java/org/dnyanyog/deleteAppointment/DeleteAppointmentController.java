@@ -4,7 +4,16 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
-
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import org.dnyanyog.appointments.Appointments;
 import org.dnyanyog.cases.Cases;
 import org.dnyanyog.common.ApiEndPoints;
@@ -13,20 +22,8 @@ import org.dnyanyog.common.RestAPIClient;
 import org.dnyanyog.dashboard.Dashboard;
 import org.dnyanyog.dto.appointments.AppointmentData;
 import org.dnyanyog.dto.appointments.AppointmentResponse;
-import org.dnyanyog.dto.patients.PatientResponse;
 import org.dnyanyog.patients.Patients;
 import org.dnyanyog.users.Users;
-
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonBar;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
 
 public class DeleteAppointmentController extends CommonScreen {
 
@@ -151,9 +148,10 @@ public class DeleteAppointmentController extends CommonScreen {
     Optional<ButtonType> result = alert.showAndWait();
 
     if (result.isPresent() && result.get() == okButton) {
-    	AppointmentResponse response =
+      AppointmentResponse response =
           apiClient.sendDeleteRequest(
-              ApiEndPoints.DELETE_APPOINTMENT.getUrl() + searchAppointmentId.getText(), AppointmentResponse.class);
+              ApiEndPoints.DELETE_APPOINTMENT.getUrl() + searchAppointmentId.getText(),
+              AppointmentResponse.class);
 
       if (response.getResponseCode() >= 200 && response.getResponseCode() < 300) {
         System.out.println("*Success*");

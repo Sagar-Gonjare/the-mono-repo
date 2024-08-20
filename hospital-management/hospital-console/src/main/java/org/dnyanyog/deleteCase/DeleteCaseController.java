@@ -3,26 +3,23 @@ package org.dnyanyog.deleteCase;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
-
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
 import org.dnyanyog.cases.Cases;
 import org.dnyanyog.common.ApiEndPoints;
 import org.dnyanyog.common.RestAPIClient;
 import org.dnyanyog.dashboard.Dashboard;
 import org.dnyanyog.dto.cases.CaseData;
 import org.dnyanyog.dto.cases.CaseResponse;
-import org.dnyanyog.dto.patients.PatientResponse;
 import org.dnyanyog.patients.Patients;
 import org.dnyanyog.users.Users;
-
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonBar;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
 
 public class DeleteCaseController {
 
@@ -141,36 +138,36 @@ public class DeleteCaseController {
   }
 
   public void delete(ActionEvent event) {
-	  
-	  if (caseId.getText().isEmpty()) {
-	      System.out.println("Please provide a case ID.");
-	      return;
-	    }
-	  
-	    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-	    alert.setTitle("Inactive");
-	    alert.setHeaderText("Delete Patient");
-	    alert.setContentText("Do you want to delete the patient?");
-	    ButtonType okButton = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
-	    ButtonType cancelButton = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
-	    alert.getButtonTypes().setAll(okButton, cancelButton);
-	    Optional<ButtonType> result = alert.showAndWait();
 
-	    if (result.isPresent() && result.get() == okButton) {
-	      CaseResponse response =
-	          apiClient.sendDeleteRequest(
-	              ApiEndPoints.DELETE_CASE.getUrl() + patientId.getText(), CaseResponse.class);
+    if (caseId.getText().isEmpty()) {
+      System.out.println("Please provide a case ID.");
+      return;
+    }
 
-	      if (response.getResponseCode() >= 200 && response.getResponseCode() < 300) {
-	        System.out.println("*Success*");
-	        // successfulMessage.setVisible(true);
-	        showAlert("Update", "Patient Deleted successfully");
-	        new Patients().show();
+    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+    alert.setTitle("Inactive");
+    alert.setHeaderText("Delete Patient");
+    alert.setContentText("Do you want to delete the patient?");
+    ButtonType okButton = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
+    ButtonType cancelButton = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
+    alert.getButtonTypes().setAll(okButton, cancelButton);
+    Optional<ButtonType> result = alert.showAndWait();
 
-	      } else {
-	        System.out.println("*Error*");
-	      }
-	    }
+    if (result.isPresent() && result.get() == okButton) {
+      CaseResponse response =
+          apiClient.sendDeleteRequest(
+              ApiEndPoints.DELETE_CASE.getUrl() + patientId.getText(), CaseResponse.class);
+
+      if (response.getResponseCode() >= 200 && response.getResponseCode() < 300) {
+        System.out.println("*Success*");
+        // successfulMessage.setVisible(true);
+        showAlert("Update", "Patient Deleted successfully");
+        new Patients().show();
+
+      } else {
+        System.out.println("*Error*");
+      }
+    }
   }
 
   private void showAlert(String title, String message) {

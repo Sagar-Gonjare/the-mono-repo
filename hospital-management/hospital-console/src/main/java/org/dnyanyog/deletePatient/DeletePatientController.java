@@ -1,26 +1,14 @@
 package org.dnyanyog.deletePatient;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
-
-import org.apache.http.HttpStatus;
-import org.dnyanyog.cases.Cases;
-import org.dnyanyog.common.ApiEndPoints;
-import org.dnyanyog.common.RequestMapper;
-import org.dnyanyog.common.RestAPIClient;
-import org.dnyanyog.dto.patients.PatientData;
-import org.dnyanyog.dto.patients.PatientRequest;
-import org.dnyanyog.dto.patients.PatientResponse;
-import org.dnyanyog.patients.Patients;
-import org.dnyanyog.users.Users;
-
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
@@ -28,12 +16,14 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
 import okhttp3.OkHttpClient;
-
-
-
-
+import org.dnyanyog.cases.Cases;
+import org.dnyanyog.common.ApiEndPoints;
+import org.dnyanyog.common.RestAPIClient;
+import org.dnyanyog.dto.patients.PatientData;
+import org.dnyanyog.dto.patients.PatientResponse;
+import org.dnyanyog.patients.Patients;
+import org.dnyanyog.users.Users;
 
 public class DeletePatientController {
 
