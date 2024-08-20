@@ -3,7 +3,7 @@ name: appointment-service-ci
 on:
   push:
      paths:
-      - Hospital-Management/appointment-service/**
+      - hospital-management/appointment-service/**
 
 jobs:
   build-respective-service:
