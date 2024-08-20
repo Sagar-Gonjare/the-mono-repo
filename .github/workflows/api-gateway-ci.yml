@@ -37,7 +37,7 @@ jobs:
       - name : Gitleaks Scan
         run: |
          docker pull ${{vars.CONTAINER_REGISTRY_URL}}/gitleaks
-         docker run -v "$(pwd):/path" ${{vars.CONTAINER_REGISTRY_URL}}/gitleaks 
+         docker run -v "$(pwd):/path" ${{vars.CONTAINER_REGISTRY_URL}}/gitleaks detect -v
 
 
       - name: License finder
