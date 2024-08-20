@@ -3,7 +3,7 @@ name: case-service-ci
 on:
   push:
      paths:
-      - Hospital-Management/case-service/**
+      - hospital-management/case-service/**
 
 jobs:
   build-respective-service:
