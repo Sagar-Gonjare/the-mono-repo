@@ -4,7 +4,7 @@
 	<artifactId>api-gateway</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	
-	<properties>
+	<properties> 
 		<maven.compiler.target>17</maven.compiler.target>
 		<maven.compiler.source>17</maven.compiler.source>
 		<image.registry>dnyanyog.org</image.registry>
