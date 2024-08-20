@@ -2,11 +2,11 @@ name: case-service-continious-integrationn
 
 on:
   push:
-    branches:
-      - main
+     paths:
+      - hospital-management/case-service/**
 
 jobs:
-  build-api-gateway:
+  build-respective-service:
     runs-on: ubuntu-latest
     steps:
       - name: Setup java
@@ -64,7 +64,7 @@ jobs:
       - name: Push Docker Images
         run: |
              CURRENT_FOLDER_NAME=case-service
-             docker push ${{vars.CONTAINER_REGISTRY_URL}}/api-gateway:$GITHUB_REF_NAME
+             docker push ${{vars.CONTAINER_REGISTRY_URL}}/CURRENT_FOLDER_NAME:$GITHUB_REF_NAME
    # - name : iamge tag 
    #   run :  docker tag dnyanyog.org/api-gateway:latest sagargonjare/api_gateway:$GITHUB_REF_NAME
   
