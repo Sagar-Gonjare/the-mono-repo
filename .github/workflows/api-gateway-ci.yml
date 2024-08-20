@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
         
       - name: go to service and run commands
-        working-directory: 'hospital-management/patient-service'
+        working-directory: 'hospital-management/api-gateway'
         run: |
          echo "Current directory: $(pwd)"
          ls
@@ -24,6 +24,7 @@ jobs:
           args: --path=.
 
       - name: Build API Gateway
+        working-directory: 'hospital-management/api-gateway'
         run:  docker build -t ${{vars.DOCKER_REGISTRY_USER}}/api-gateway:latest -f api-gateway/dockerfile .
 
       - name: Login to Github Docker Registry
