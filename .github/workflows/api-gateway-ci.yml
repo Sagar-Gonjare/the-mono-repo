@@ -11,7 +11,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
+        
+      - name: go to service and run commands
+        working-directory: 'hospital-management/patient-service'
+        run: |
+         echo "Current directory: $(pwd)"
+         ls
+        
       - name: Gitleaks scan
         uses: zricethezav/gitleaks-action@v1.3.0
         with:
