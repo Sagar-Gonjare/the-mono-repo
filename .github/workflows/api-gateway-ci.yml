@@ -3,7 +3,7 @@ name: api-gateway-ci
 on:
   push:
      paths:
-      - Hospital-Management/api-gateway/**
+      - hospital-management/api-gateway/**
 
 jobs:
   build-api-gateway:
