@@ -60,7 +60,7 @@ jobs:
 
       - name: Push Docker Images
         run: |
-             CURRENT_FOLDER_NAME=$(basename $(pwd))
+             CURRENT_FOLDER_NAME=api-gateway
              docker push ${{vars.CONTAINER_REGISTRY_URL}}/api-gateway:$GITHUB_REF_NAME
    # - name : iamge tag 
    #   run :  docker tag dnyanyog.org/api-gateway:latest sagargonjare/api_gateway:$GITHUB_REF_NAME
