@@ -36,6 +36,7 @@ jobs:
 
       - name : Gitleaks Scan
         run: |
+         cd hospital-management/api-gateway
          docker pull ${{vars.CONTAINER_REGISTRY_URL}}/gitleaks
          docker run -v "$(pwd):/path" ${{vars.CONTAINER_REGISTRY_URL}}/gitleaks detect -v
 
@@ -43,6 +44,7 @@ jobs:
       - name: License finder
         working-directory: 'hospital-management/api-gateway'
         run: |
+          cd hospital-management/api-gateway
           docker pull sagargonjare/licence-finder:latest
           docker run -v "$(pwd):/scan" ${{vars.CONTAINER_REGISTRY_URL}}/license-finder:latest
           
