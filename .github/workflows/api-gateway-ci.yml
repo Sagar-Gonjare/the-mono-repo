@@ -43,7 +43,7 @@ jobs:
       - name: License finder
         working-directory: 'hospital-management/api-gateway'
         run: |
-          cd hospital-management/api-gateway
+          
           docker pull sagargonjare/licence-finder:latest
           docker images
           docker run -v "$(pwd):/scan" docker.io/sagargonjare/licence-finder:latest
