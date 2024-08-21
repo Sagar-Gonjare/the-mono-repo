@@ -3,7 +3,7 @@ name: hospital-console-ci
 on:
   push:
      paths:
-      - hospital-management/api-gateway/**
+      - hospital-management/hospital-console/**
 
 jobs:
   build-respective-service:
