@@ -1,8 +1,6 @@
 package org.dnyanyog.service;
 
-import java.util.List;
 import java.util.Optional;
-
 import org.dnyanyog.dto.request.LoginRequest;
 import org.dnyanyog.dto.response.LoginResponse;
 import org.dnyanyog.encryption.EncryptionService;
@@ -22,18 +20,18 @@ public class LoginServiceImpl extends LoginService {
 
   public LoginResponse userLogin(LoginRequest request) throws Exception {
     response = new LoginResponse();
-    Optional<Users> userData =  repo.findByUserName(request.getUserName());
+    Optional<Users> userData = repo.findByUserName(request.getUserName());
     if (userData != null) {
       Users data = userData.get();
       String encryptedPassword = data.getPassword();
       String requestPass = encryptionService.Encrypt(request.getPassword());
 
       if (requestPass.equalsIgnoreCase(encryptedPassword)) {
-    	   
+
         response.setResponseCode(HttpStatus.OK.value());
         response.setResponseMsg("Login Successfull");
       } else {
-    	  
+
         response.setResponseCode(HttpStatus.UNAUTHORIZED.value());
         response.setResponseMsg("Username & Password Do Not Match");
       }

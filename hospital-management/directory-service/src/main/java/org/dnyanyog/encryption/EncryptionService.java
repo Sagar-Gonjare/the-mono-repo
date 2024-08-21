@@ -4,10 +4,10 @@ import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
-
 import javax.crypto.*;
 import javax.crypto.spec.SecretKeySpec;
 import org.springframework.stereotype.Component;
+
 @Component
 public class EncryptionService {
   private static final String SECRET_KEY = "5F2708070EF2F88AB8123AB1036880E4";
@@ -30,17 +30,14 @@ public class EncryptionService {
       e.printStackTrace();
     }
   }
-  
-  public static String Encrypt (String data) throws Exception{
-	  byte[] encryptedBytes=cipher.doFinal(data.getBytes());
-	    return Base64.getEncoder().encodeToString(encryptedBytes);
 
+  public static String Encrypt(String data) throws Exception {
+    byte[] encryptedBytes = cipher.doFinal(data.getBytes());
+    return Base64.getEncoder().encodeToString(encryptedBytes);
   }
-  
+
   public static String decrypt(String data) throws Exception {
-	  byte []decryptedBytes=cipher.doFinal(data.getBytes());
-	  return new String (decryptedBytes,StandardCharsets.UTF_8);
+    byte[] decryptedBytes = cipher.doFinal(data.getBytes());
+    return new String(decryptedBytes, StandardCharsets.UTF_8);
   }
-  
-  
 }

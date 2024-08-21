@@ -3,7 +3,6 @@ package org.dnyanyog.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
 import org.dnyanyog.dto.request.UserRequest;
 import org.dnyanyog.dto.response.UserData;
 import org.dnyanyog.dto.response.UserResponse;
@@ -32,18 +31,17 @@ public class UserServiceImpl {
 
   public ResponseEntity<UserResponse> addUser(UserRequest request) throws Exception {
 
-    if (userRepo.existsByUserName(request.getUserName()))  {
+    if (userRepo.existsByUserName(request.getUserName())) {
       UserResponse response = new UserResponse();
       response.setResponseCode(HttpStatus.CONFLICT.value());
       response.setResponseMsg("Username is already exist");
       return ResponseEntity.status(HttpStatus.OK).body(response);
     }
-    
-    
+
     response = new UserResponse();
     response.setData(new UserData());
     //  userResponse (request.getConfirmPassword() == request.getPassword()) {
-    if (!(userRepo.existsByUserName(request.getUserName()) )) {
+    if (!(userRepo.existsByUserName(request.getUserName()))) {
       Users usersTable =
           Users.getInstance()
               .setUserName(request.getUserName())

@@ -18,7 +18,7 @@ public class UserData {
 
   private String password;
 
-//  private String confirmPassword;
+  //  private String confirmPassword;
 
   public static UserData getInstace() {
     return new UserData();
@@ -69,14 +69,14 @@ public class UserData {
     return this;
   }
 
-//  public String getConfirmPassword() {
-//    return confirmPassword;
-//  }
-//
-//  public UserData setConfirmPassword(String confirmPassword) {
-//    this.confirmPassword = confirmPassword;
-//    return this;
-//  }
+  //  public String getConfirmPassword() {
+  //    return confirmPassword;
+  //  }
+  //
+  //  public UserData setConfirmPassword(String confirmPassword) {
+  //    this.confirmPassword = confirmPassword;
+  //    return this;
+  //  }
 
   public String getStatus() {
     return status;

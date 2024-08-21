@@ -1,8 +1,7 @@
 package org.dnyanyog.entity;
 
-import org.springframework.stereotype.Component;
-
 import jakarta.persistence.*;
+import org.springframework.stereotype.Component;
 
 @Component
 @Entity(name = "users_Table")
@@ -21,12 +20,12 @@ public class Users {
 
   @Column private String password;
 
-//  @Column private String confirmPassword;
+  //  @Column private String confirmPassword;
 
   @Column private String status;
-  
+
   public static Users getInstance() {
-	  return new Users();
+    return new Users();
   }
 
   public long getUserId() {
@@ -62,8 +61,7 @@ public class Users {
 
   public Users setMobileNumber(String mobileNumber) {
     this.mobileNumber = mobileNumber;
-  return this;
-    
+    return this;
   }
 
   public String getRole() {
@@ -84,14 +82,14 @@ public class Users {
     return this;
   }
 
-//  public String getConfirmPassword() {
-//    return confirmPassword;
-//  }
-//
-//  public Users setConfirmPassword(String confirmPassword) {
-//    this.confirmPassword = confirmPassword;
-//    return this;
-//  }
+  //  public String getConfirmPassword() {
+  //    return confirmPassword;
+  //  }
+  //
+  //  public Users setConfirmPassword(String confirmPassword) {
+  //    this.confirmPassword = confirmPassword;
+  //    return this;
+  //  }
 
   public String getStatus() {
     return status;
