@@ -28,9 +28,10 @@ jobs:
         run : mvn com.spotify.fmt:fmt-maven-plugin:check
 
       - name : Gitleaks Scan
-        uses: zricethezav/gitleaks-action@v1.3.0
-        with:
-           args: --path=.
+        run: |
+         docker pull ${{vars.CONTAINER_REGISTRY_URL}}/gitleaks
+         docker run -v "$(pwd):/path" ${{vars.CONTAINER_REGISTRY_URL}}/gitleaks detect -v
+
 
       - name : OSSS Scan
         run : mvn ossindex:audit
@@ -43,11 +44,15 @@ jobs:
       - name : build code and create docker image 
         working-directory: 'hospital-management/appointment-service'
         run :  mvn clean install docker:build -Dimage.registry=${{vars.CONTAINER_REGISTRY_URL}} -Dimage.tag=$GITHUB_REF_NAME
-  
-      - name: Gitleaks scan
-        uses: zricethezav/gitleaks-action@v1.3.0
-        with:
-          args: --path=.
+     
+      - name: License finder
+        working-directory: 'hospital-management/api-gateway'
+        run: |
+          
+          docker pull sagargonjare/licence-finder:latest
+          docker images
+          docker run -v "$(pwd):/scan" docker.io/sagargonjare/licence-finder:latest
+        continue-on-error: true
 
       
       - name: Login to Github Docker Registry
