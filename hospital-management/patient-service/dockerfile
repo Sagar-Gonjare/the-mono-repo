@@ -2,7 +2,6 @@ FROM sagargonjare/openjdk-24-jdk-slim:latest
 
 WORKDIR /app
 
-
 #COPY patient-service-0.0.1-SNAPSHOT.jar /app/patient-service-0.0.1-SNAPSHOT.jar
 
 #CMD ["java","-jar", "patient-service-0.0.1-SNAPSHOT.jar"] 
