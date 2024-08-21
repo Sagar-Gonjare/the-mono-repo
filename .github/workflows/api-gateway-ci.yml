@@ -43,7 +43,7 @@ jobs:
       - name: License finder
         working-directory: 'hospital-management/api-gateway'
         run: |
-          docker pull ${{vars.CONTAINER_REGISTRY_URL}}/license-finder:latest
+          docker pull ${{vars.CONTAINER_REGISTRY_URL}}/license-finder:main
           docker run -v "$(pwd):/scan" ${{vars.CONTAINER_REGISTRY_URL}}/license-finder:latest
           
 
