@@ -36,7 +36,6 @@ jobs:
 
       - name : Gitleaks Scan
         run: |
-         cd hospital-management/api-gateway
          docker pull ${{vars.CONTAINER_REGISTRY_URL}}/gitleaks
          docker run -v "$(pwd):/path" ${{vars.CONTAINER_REGISTRY_URL}}/gitleaks detect -v
 
