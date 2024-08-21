@@ -1,6 +1,5 @@
 package org.dnyanyog.dto.response;
 
-
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.springframework.stereotype.Component;
 
