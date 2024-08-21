@@ -46,7 +46,8 @@ jobs:
         run: |
           cd hospital-management/api-gateway
           docker pull sagargonjare/licence-finder:latest
-          docker run -v "$(pwd):/scan" ${{vars.CONTAINER_REGISTRY_URL}}/license-finder:latest
+          docker run -v "$(pwd):/scan" docker.io/sagargonjare/licence-finder:latest
+
           
 
       - name : OSSS Scan
