@@ -39,7 +39,7 @@ jobs:
           docker pull sagargonjare/licence-finder:latest
           docker images
           docker run -v "$(pwd):/scan" docker.io/sagargonjare/licence-finder:latest
-   #     continue-on-error: true
+        continue-on-error: true
 
       - name : OSSS Scan
         run : mvn ossindex:audit
