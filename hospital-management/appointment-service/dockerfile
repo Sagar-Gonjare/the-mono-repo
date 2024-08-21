@@ -4,6 +4,6 @@ WORKDIR /app
 
 COPY target/appointment-service-0.0.1-SNAPSHOT.jar /app/appointment-service-0.0.1-SNAPSHOT.jar
 
-CMD ["java","-jar", "appointment-service-0.0.1-SNAPSHOT.jar"]
+CMD ["java","-jar", "appointment-service-0.0.1-SNAPSHOT.jar"] 
 
 #docker build -t org.sagar/appointment -f dockerfile .
