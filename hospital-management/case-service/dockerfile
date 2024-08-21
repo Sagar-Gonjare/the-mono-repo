@@ -4,4 +4,4 @@ WORKDIR /app
 
 COPY target/case-service-0.0.1-SNAPSHOT.jar /app/case-service-0.0.1-SNAPSHOT.jar
 
-CMD ["java","-jar", "directory-service-0.0.1-SNAPSHOT.jar"]
+CMD ["java","-jar", "directory-service-0.0.1-SNAPSHOT.jar"] 
