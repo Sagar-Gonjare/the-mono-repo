@@ -58,7 +58,7 @@ jobs:
       - name : build code and create docker image 
         working-directory: 'hospital-management/api-gateway'
         run :  mvn clean install docker:build -Dimage.registry=${{vars.CONTAINER_REGISTRY_URL}} -Dimage.tag=$GITHUB_REF_NAME
-
+ 
      
       - name: Push Docker Images
         run: |
